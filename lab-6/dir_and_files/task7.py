@@ -1,9 +1,11 @@
 def copy_file(path1, path2):
-    with open(path1, "r") as file1:
-        with open(path2, "w") as file2:
-            file2.write(file1.read())
+    file1 = open(path1, "r")
+    file2 = open(path2, "w")
+    file2.write(file1.read())
+    file1.close()
+    file2.close()
 
+file1 = "/Users/Admin/DocumentsClone/Lab-python/lab-6/dir_and_files/files_7/file1.txt"
+file2 = "/Users/Admin/DocumentsClone/Lab-python/lab-6/dir_and_files/files_7/file2.txt"
 
-file1 = input("The path of the source file: ")
-file2 = input("The path of the destination file: ")
 copy_file(file1, file2)

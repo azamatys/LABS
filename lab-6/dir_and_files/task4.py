@@ -1,8 +1,10 @@
-path = "/Users/adilkanatov/Documents/py_labs/lab_6/dir-and-files/txt-documents/text.txt"
+import os
 
-try:
-    with open(path) as my_file:
-        line_count = sum(1 for line in my_file)
-    print(line_count)
-except FileNotFoundError:
-    print("File not found")
+
+def count_lines(file):
+    f = open(file, 'r')
+    lines = len(f.readlines())
+    print('Number of lines:', lines)
+    f.close()
+
+count_lines("/Users/Admin/DocumentsClone/Lab-python/lab-6/test_for_4.txt")

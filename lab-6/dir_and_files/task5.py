@@ -1,10 +1,12 @@
-path = (
-    "/Users/adilkanatov/Documents/py_labs/lab_6/dir-and-files/txt-documents/example.txt"
-)
+def write_list_to_file(file_path, mylist):
+    file = open(file_path, 'w')
 
+    for item in mylist:
+        file.write(str(item) + '\n') 
 
-lst = [1, 2, 3, 4, 5]
+    file.close()
 
-with open(path, "w") as my_file:
-    for item in lst:
-        my_file.write(str(item) + "\n")
+mylist = [6, 7, 8, 9]
+file_path = "/Users/Admin/DocumentsClone/Lab-python/lab-6/dir_and_files/test5.txt"
+
+write_list_to_file(file_path, mylist)

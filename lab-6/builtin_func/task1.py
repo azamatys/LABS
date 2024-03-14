@@ -1,12 +1,10 @@
 from functools import reduce
 
+def multiply_list(numbers):
+    res = reduce(lambda x, y: x * y, numbers)
+    return res
 
-numbers = input().split()
-print(reduce(lambda a, b: int(a) * int(b), numbers))
+numbers = [int(x) for x in input().split()]
 
-
-########################## Alternative
-# from math import prod
-
-# numbers2 = [1, 2, 3, 4, 5]
-# print(prod(numbers2))
+res = multiply_list(numbers)
+print("Multiplication of all numbers in the list: ", res)

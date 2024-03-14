@@ -13,6 +13,6 @@ def list_dirs_files(path):
             print(item)
 
 
-path = "\Users\Admin\DocumentsClone\Lab-python\lab-6"
+path = "/Users/Admin/DocumentsClone/Lab-python/lab-6"
 
 list_dirs_files(path)

@@ -1,11 +1,11 @@
-import string
+letters = [chr(i) for i in range(65, 91)]
 
-
-for letter in string.ascii_uppercase:
+for x in letters:
     path = (
-        "/Users/adilkanatov/Documents/py_labs/lab_6/dir-and-files/txt-documents/"
-        + letter
+        "/Users/Admin/DocumentsClone/Lab-python/lab-6/dir_and_files/generated_files_6/"
+        + x
         + ".txt"
     )
-    with open(path, "w") as my_file:
-        my_file.write("Hello".format(path))
+    my_file = open(path, "w")
+    my_file.write("Hello")
+    my_file.close()

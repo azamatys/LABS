@@ -1,12 +1,8 @@
 import time
 import math
 
+def sqRoot_after_ms(number, msec):
+    time.sleep(msec / 1000)
+    print(f"Square root of {number} after {msec} milliseconds is {math.sqrt(number)}")
 
-def invoke_after_ms(num, ms):
-    time.sleep(ms / 1000)
-    print(f"Square root of {num} after {ms} milliseconds is {math.sqrt(num)}")
-
-
-num = int(input())
-ms = int(input())
-invoke_after_ms(num, ms)
+sqRoot_after_ms(int(input()), int(input()))

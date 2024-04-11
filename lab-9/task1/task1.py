@@ -24,6 +24,7 @@ COIN_SCORE = 0
 SPEED = 5
 SCORE = 0
 TOTAL_SCORE = 0
+COIN_COUNT = 0  # Переменная для отслеживания количества собранных монет
 
 # Setting up Fonts
 font = pygame.font.SysFont("Verdana", 60)
@@ -119,7 +120,10 @@ while True:
     # Cycles through all events occurring
     for event in pygame.event.get():
         if event.type == INC_SPEED:
-            SPEED += 0.5
+            # if player reach 50 points then speed of the game increase on 3.0
+            if COIN_COUNT >= 50:
+                SPEED += 3.0
+                COIN_COUNT = 0  # Сбрасываем счетчик собранных монет
         if event.type == QUIT:
             pygame.quit()
             sys.exit()
@@ -137,16 +141,14 @@ while True:
         DISPLAYSURF.blit(entity.image, entity.rect)
         entity.move()
 
-    total_score = random.randint(0, 10)
-
     # Check for coin collection
     if P1.collect_coin(coins):
-        # if player reach 100 points then speed of the game increase on 1.0
-        if TOTAL_SCORE == 100:
-            SPEED += 1.0
         COIN_SCORE += 1
+
         # Total score increase on random points
+        total_score = random.randint(0, 10)
         TOTAL_SCORE += total_score
+        COIN_COUNT += total_score
         new_coin = Coin()
         coins.add(new_coin)
         all_sprites.add(new_coin)

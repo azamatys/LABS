@@ -56,17 +56,19 @@ def run_game():
     snake_pixels = []
     snake_length = 1
     
-    target_x = round(random.randrange(0, WIDTH-snake_size)/ 10.0) * 10.0  # Отвечает за положение нашего яблоко, для этого даем ему рандомные значения по
-    target_y = round(random.randrange(0, HEIGHT-snake_size)/ 10.0) * 10.0 #  X и Y осям.
+    # position of apple, we give it random values ​​​​the X and Y axes
+    target_x = round(random.randrange(0, WIDTH-snake_size)/ 10.0) * 10.0 
+    target_y = round(random.randrange(0, HEIGHT-snake_size)/ 10.0) * 10.0 
     
     level = 1
     fruits_eaten = 0
     
-    while not game_over: # Game Loop
+    # Game Loop
+    while not game_over:
         
         while game_close:
             screen.fill(black)
-            game_over_message = message_font.render("Game Over", True, red) # Это все можно вывести за наш гейм луп в отдельную функцию
+            game_over_message = message_font.render("Game Over", True, red)
             screen.blit(game_over_message, [WIDTH / 3, HEIGHT / 3]) 
             print_score(snake_length - 1)
             pygame.display.update()
@@ -135,7 +137,7 @@ def run_game():
             snake_length += 1
             fruits_eaten += 1
             
-            if fruits_eaten % 3 == 0:
+            if fruits_eaten % 3 == 0: # После трех яблок, увеличиваем уровень
                 level += 1
                 snake_speed += 2  # Увеличиваем скорость змеи
         clock.tick(snake_speed)

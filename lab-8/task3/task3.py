@@ -5,7 +5,7 @@ pygame.init()
 # Screen
 screen = pygame.display.set_mode([800, 600])
 screen.fill("white")
-pygame.display.set_caption("Pygame Paint")
+pygame.display.set_caption("Paint")
 clock = pygame.time.Clock()
 
 # Define colors
